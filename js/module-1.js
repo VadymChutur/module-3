@@ -26,8 +26,8 @@ const colorPickerData = {
 
 // console.log(colorPickerData);
 
-const a = { x: 1, y: 2 };
-const b = a;
+// const a = { x: 1, y: 2 };
+// const b = a;
 
 // console.log(b === a);
 // console.log(b);
@@ -36,3 +36,8 @@ const b = a;
 
 // console.log(b);
 // console.log(a);
+
+const a = [1, 2, 3];
+a.hello = 10;
+
+console.log(a);
