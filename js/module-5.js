@@ -50,8 +50,34 @@ const cart = {
 
     return total;
   },
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    // console.log(this.items);
+    const { items } = this;
+    // console.log(items);
+
+    for (const item of items) {
+      if (item.name === productName) {
+        item.quantity += 1;
+        return;
+      }
+    }
+
+    console.log('There is no such product in the shopping cart');
+  },
+  decreaseQuantity(productName) {
+    const { items } = this;
+
+    for (const item of items) {
+      if (item.name === productName && item.quantity > 1) {
+        item.quantity -= 1;
+        return;
+      }
+    }
+
+    console.log(
+      'Minimum number of products 1, to remove use the method cart.remove([Product name])'
+    );
+  },
 };
 
 console.log(cart.getItems());
@@ -84,6 +110,19 @@ console.table(cart.getItems());
 
 console.log(cart.countTotalPrice());
 
-cart.increaseQuantity({ name: 'apple', price: 50 });
+cart.increaseQuantity('apple');
+cart.increaseQuantity('apple');
+cart.increaseQuantity('apple');
+cart.increaseQuantity('lemon');
+cart.increaseQuantity('lemon');
+cart.increaseQuantity('strawberry');
+cart.increaseQuantity('banana');
+
+console.table(cart.getItems());
+
+cart.decreaseQuantity('apple');
+cart.decreaseQuantity('lemon');
+cart.decreaseQuantity('strawberry');
+cart.decreaseQuantity('strawberry');
 
 console.table(cart.getItems());
