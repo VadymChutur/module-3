@@ -126,3 +126,45 @@ cart.decreaseQuantity('strawberry');
 cart.decreaseQuantity('strawberry');
 
 console.table(cart.getItems());
+
+// function countProps(object) {
+//   // Change code below this line
+//   let propCount = 0;
+//   const keys = Object.keys(object);
+
+//   for (const key of keys) {
+//     propCount += 1;
+//   }
+
+//   return propCount;
+//   // Change code above this line
+// }
+
+// countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 });
+
+const products = [
+  { name: 'Radar', price: 1300, quantity: 4 },
+  { name: 'Scanner', price: 2700, quantity: 3 },
+  { name: 'Droid', price: 400, quantity: 7 },
+  { name: 'Grip', price: 1200, quantity: 9 },
+];
+
+function getAllPropValues(propName) {
+  // Change code below this line
+  let colectionName = [];
+
+  for (let item of products) {
+    console.log(item[propName]);
+    if (item[propName]) {
+      colectionName.push(item[propName]);
+    }
+  }
+
+  return colectionName;
+  // Change code above this line
+}
+
+console.log(getAllPropValues('name'));
+console.log(getAllPropValues('quantity'));
+console.log(getAllPropValues('price'));
+console.log(getAllPropValues('category'));
